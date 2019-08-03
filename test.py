@@ -32,6 +32,7 @@ print D.__mro__
 
 
 
+## --------------Decorator ---------------
 def test(func):
     def inner(*args, **kwargs):
         print "welcome"
