@@ -37,3 +37,13 @@
 
 # obj = A()
 # obj.foo()
+
+#------------Call Function -------
+
+
+class A(object):
+    def __call__(self, a, b):
+        return a + b
+
+a = A()
+print a(4,5)
