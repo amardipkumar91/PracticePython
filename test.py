@@ -3,7 +3,7 @@ class A(object):
     #     print "A init"
 
     def foo(self):
-        print "A"
+        print ("A")
     
 
 class B(object):
