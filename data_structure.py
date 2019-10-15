@@ -50,25 +50,49 @@
 
 #-----------------------------Implement Queue using stack -----------
 
+class Queue:
+    def __init__(self):
+        self.s1 = []
+        self.s2 = []
+    
+    def enQueue(self, x):
+        while len(self.s1) != 0:
+            self.s2.append(self.s1[-1])
+            self.s1.pop()
+        self.s1.append(x)
+        while len(self.s2) != 0:
+            self.s1.append(self.s2[-1])
+            self.s2.pop()
+
+    def deQueue(self):
+        if len(self.s1) == 0:
+            print ("queue is empty")
+        x = self.s1[-1]
+        # self.s1 = self.s1[::-1]
+        self.s1.pop()
+        # self.s1 = self.s1[::-1]
+        return x
+
+obj = Queue()
+obj.enQueue(1)
+obj.enQueue(2)
+obj.enQueue(3)
+obj.deQueue()
+
+#--------------
+
 # class Queue:
 #     def __init__(self):
 #         self.s1 = []
-#         self.s2 = []
-    
-#     def enQueue(self, x):
-#         while len(self.s1) != 0:
-#             self.s2.append(self.s1[-1])
-#             self.s1.pop()
-#         self.s1.append(x)
-#         while len(self.s2) != 0:
-#             self.s1.append(self.s2[-1])
-#             self.s2.pop()
 
+#     def enQueue(self, x):
+#         self.s1.append(x)
+    
 #     def deQueue(self):
 #         if len(self.s1) == 0:
 #             print ("queue is empty")
-#         x = self.s1[0]
 #         self.s1 = self.s1[::-1]
+#         x = self.s1[-1]
 #         self.s1.pop()
 #         self.s1 = self.s1[::-1]
 #         return x
@@ -77,32 +101,8 @@
 # obj.enQueue(1)
 # obj.enQueue(2)
 # obj.enQueue(3)
+# import pdb;pdb.set_trace()
 # obj.deQueue()
-
-#--------------
-
-class Queue:
-    def __init__(self):
-        self.s1 = []
-
-    def enQueue(self, x):
-        self.s1.append(x)
-    
-    def deQueue(self):
-        if len(self.s1) == 0:
-            print ("queue is empty")
-        self.s1 = self.s1[::-1]
-        x = self.s1[-1]
-        self.s1.pop()
-        self.s1 = self.s1[::-1]
-        return x
-
-obj = Queue()
-obj.enQueue(1)
-obj.enQueue(2)
-obj.enQueue(3)
-import pdb;pdb.set_trace()
-obj.deQueue()
 
 
 
@@ -173,4 +173,33 @@ obj.deQueue()
 #     print(s.top())  
   
 #     print("current size: ", s.size()) 
+
+#-------------bubble sort ----------
+
+alist = [54,26,93,17,77,31,44,55,20]
+# def bubbleSort(alist):
+#     for passnum in range(len(alist)-1,0,-1):
+#         for i in range(passnum):
+#             if alist[i]>alist[i+1]:
+#                 temp = alist[i]
+#                 alist[i] = alist[i+1]
+#                 alist[i+1] = temp
+
+# bubbleSort(alist)
+# print(alist)
+
+#-------------selection sort -----------
+# def selection_sort(alist):
+#     for i in range(len(alist)-1 , 0 , -1):
+#         pom = 0
+#         for j in range(1, i +1 ):
+#             if alist[j] > alist[pom]:
+#                 pom = j
+#             tmp = alist[i]
+#             alist[i] = alist[pom]
+#             alist[pom] = tmp
+
+# selection_sort(alist)
+# print (alist)
+
 

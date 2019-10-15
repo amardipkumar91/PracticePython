@@ -13,30 +13,6 @@ class ListItem(object):
     def total(self):
         return self.price * self.qunatity
 
-
-class Order(object):
-    def __init__(self, customer, cart, promotion = None):
-        self.customer = customer
-        self.cart = list(cart)
-        self.promotion = promotion
-    
-    def total(self):
-        if not hasattr(self, '__total'):
-            self.__total = sum(item.total() for item in self.cart)
-        return self.__total
-    
-    def due(self):
-        if self.promotion is None:
-            discount = 0
-        else:
-            
-            discount = self.promotion.discount(self)
-        return self.total() - discount
-    
-    def __repr__(self):
-        fmt = '<Order total: {:.2f} due: {:.2f}>' 
-        return fmt.format(self.total(), self.due())
-
 class Promotion(ABC):
     @abstractmethod
     def discount(self):
@@ -65,15 +41,41 @@ class LargeOrderPromo(Promotion):
             return order.total() * .07 
         return 0
 
+# promos = [FidelityPromo.discount, BulkItemPromo.discount, LargeOrderPromo.discount]
+class Order(object):
+    def __init__(self, customer, cart, promotion = None):
+        self.customer = customer
+        self.cart = list(cart)
+        self.promotion = promotion
+    
+    def total(self):
+        if not hasattr(self, '__total'):
+            self.__total = sum(item.total() for item in self.cart)
+        return self.__total
+    
+    def due(self):
+        if self.promotion is None:
+            discount = 0
+        else:
+            
+            discount = self.promotion.discount(self)
+        return self.total() - discount
+    
+    def __repr__(self):
+        fmt = '<Order total: {:.2f} due: {:.2f}>' 
+        return fmt.format(self.total(), self.due())
+
+    
 if __name__ == '__main__':
 
     joe = Customer('John Doe', 1900)
     ann = Customer('Ann Smith', 1100)
     cart = [ListItem('banana', 39, .5),ListItem('apple', 10, 1.5),ListItem('watermellon', 5, 5.0)]
-    obj = Order(joe, cart, BulkItemPromo())
+    obj = Order(joe, cart, FidelityPromo())
 
     obj1 = Order(ann, cart, FidelityPromo())
     print (obj)
+    # print (obj.best_promo())
 
 
 

@@ -9,3 +9,4 @@
 
 # symbols = '$¢£¥€¤'
 # tuple_data = tuple(ord(symbol) for symbol in symbols)
+
