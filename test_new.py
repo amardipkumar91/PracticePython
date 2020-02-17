@@ -87,7 +87,7 @@ def findZeroes(arr, n, m) :
           
         # If zero count of current window is less than m, 
         # widen the window toward right 
-        import pdb;pdb.set_trace()
+        
         if zeroCount <= m : 
             if arr[wR] == 0 : 
                 zeroCount += 1
