@@ -66,6 +66,32 @@ class DoublyLinkList(object):
                 current = current.get_next()
             current.set_next(ListNode(data, None, current))
             self.tail  = current.get_next()
+    
+    def getNode(self, index):
+        currentNode = self.head
+        if currentNode == None:
+            return None
+        i = 0
+        while i < index and currentNode.get_next() != None:
+            currentNode = currentNode.get_next()
+            if currentNode == None:
+                break
+            i = i + 1
+        return currentNode
+
+    def insert_data_at_position_DL(self, data, index):
+        new_node = ListNode(data)
+        if self.head == None or index == 0:
+            self.insert_data_at_begning_DL(data)
+        elif index >0:
+            tmp = self.getNode(index)
+            if tmp == None or tmp.get_next() == None:
+                self.insert_data_at_end_DL(data)
+            else:
+                new_node.set_next(tmp.get_next())
+                new_node.set_prev(tmp)
+                tmp.get_next().set_prev(new_node)
+                tmp.set_next(new_node)
 
             
             
@@ -77,4 +103,6 @@ obj.insert_data_at_begning_DL(156)
 obj.insert_data_at_begning_DL(65)
 print ("insert data at begning in DL", obj)
 obj.insert_data_at_end_DL(67)
+print ("insert data at end in DL", obj)
+obj.insert_data_at_position_DL(776,2)
 print ("insert data at end in DL", obj)
