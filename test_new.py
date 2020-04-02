@@ -20,25 +20,26 @@
 #     print (i)
 
 
-# class Test:
-#     cc = 8
-#     def __init__(self,a,b):
-#         self.a = a
-#         self.b = b
+class Test:
+    cc = 8
+    def __init__(self,a,b):
+        self.a = a
+        self.b = b
     
-#     @staticmethod
-#     def foo(b):
-#         c = Test.cc
-#         return c
+    @staticmethod
+    def foo(b):
+        c = Test.cc
+        return c
 
-#     @classmethod
-#     def create_from_list(cls, data):
-#         return cls(data[0], data[1])
+    @classmethod
+    def create_from_list(cls, data):
+        return cls(data[0], data[1])
         
 
-# obj = Test.create_from_list([3,4])
-# # print obj.foo(6)
-# print obj.foo(5)
+obj = Test.create_from_list([3,4])
+# print obj.foo(6)
+print obj.foo(5)
+print "---"
 
 # # obj = Test(4,5)
 

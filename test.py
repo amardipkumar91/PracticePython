@@ -62,3 +62,4 @@ def countOfAnagramSubstring(s):
     return anas 
 s = ["aa", "aa", "dog", "god"]
 print(countOfAnagramSubstring(s))
+

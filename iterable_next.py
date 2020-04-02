@@ -1,40 +1,42 @@
-# import re
-# import reprlib
+import re
+import reprlib
 
-# RE_WORD = re.compile("\w+")
+RE_WORD = re.compile("\w+")
 
-# class Sentence:
-#     def __init__(self, text):
-#         self.text = text
-#         self.word = RE_WORD.findall(text)
+class Sentence:
+    def __init__(self, text):
+        self.text = text
+        self.word = RE_WORD.findall(text)
     
-#     def __repr__(self):
-#         return 'sentence(%s)'%reprlib.repr(self.text)
+    def __repr__(self):
+        return 'sentence(%s)'%reprlib.repr(self.text)
     
-#     def __iter__(self):
-#         return "hello"
+    def __next__(self):
+        try:
+            s_word = self.word[self.index]
+        except:
+            raise StopIteration()
+        self.index += 1
+        return s_word
+        
+    def __iter__(self):
+        # return "hello"
 
-#         return SentenceIterator(self.word)
+        return self
 
-# class SentenceIterator:
-#     def __init__(self, word):
-#         self.word = word
-#         self.index = 0
+class SentenceIterator:
+    def __init__(self, word):
+        self.word = word
+        self.index = 0
 
-#     def __next__(self):
-#         try:
-#             s_word = self.word[self.index]
-#         except:
-#             raise StopIteration()
-#         self.index += 1
-#         return s_word
+    
 
-#     def __iter__(self):
-#         return self
+    def __iter__(self):
+        return self
 
-# obj = Sentence("my name is amardip")
-# for i in obj:
-#     print (i)
+obj = Sentence("my name is amardip")
+for i in obj:
+    print (i)
 
 #------------------------generator-----
 
@@ -81,4 +83,21 @@ def averager():
 # print (avg.send(30))
 
 
+class ListData:
+    def __init__(self, start, end):
+        self.start = start - 1
+        self.end = end
+    
+    def __iter__(self):
+        return self
+    
+    def __next__(self):
+        self.start += 1
+        if self.start < self.end:
+            return self.start
+        raise StopIteration
+
+obj = ListData(4,10)
+for i in obj:
+    print (i)
 

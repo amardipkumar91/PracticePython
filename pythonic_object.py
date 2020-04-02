@@ -1,42 +1,42 @@
-# from array import array
-# import math
+from array import array
+import math
 
-# class Vector2d:
-#     typecode = 'd'
+class Vector2d:
+    typecode = 'd'
 
-#     def __init__(self, a, b):
-#         self.a = a
-#         self.b = b
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
     
-#     def __iter__(self):
-#         return (i for i in (self.a, self.b))
+    def __iter__(self):
+        return (i for i in (self.a, self.b))
 
-#     def __repr__(self):
-#         class_name = type(self).__name__
-#         return '{}({}, {})'.format(class_name, *self)
+    def __repr__(self):
+        class_name = type(self).__name__
+        return '{}({}, {})'.format(class_name, *self)
     
-#     def __str__(self):
-#         return str(tuple(self))
+    def __str__(self):
+        return str(tuple(self))
     
-#     def __eq__(self, other):
-#         return tuple(self) == tuple(other)
+    def __eq__(self, other):
+        return tuple(self) == tuple(other)
     
-#     def __abs__(self):
-#         return math.hypot(self.x, self.y)
+    def __abs__(self):
+        return math.hypot(self.x, self.y)
     
-#     def __bool__(self):
-#         return bool(abs(self))
+    def __bool__(self):
+        return bool(abs(self))
 
-#     def __bytes__(self):
-#         return (bytes([ord(self.typecode)]) + bytes(array(self.typecode, self)))
+    def __bytes__(self):
+        return (bytes([ord(self.typecode)]) + bytes(array(self.typecode, self)))
     
-#     def __format__(self, fmt_spec = ''):
-#         components = (format(c, fmt_spec) for c in self)
-#         return 'input is :({}, {})'.format(*components)
+    def __format__(self, fmt_spec = ''):
+        components = (format(c, fmt_spec) for c in self)
+        return 'input is :({}, {})'.format(*components)
 
 
-# obj = Vector2d(5,6)
-# print (obj)
+obj = Vector2d(5,6)
+print (obj)
 
 
 #_---------------------
