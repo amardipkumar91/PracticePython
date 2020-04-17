@@ -1,20 +1,31 @@
-
 #-----------------------Functool Wrap-------------------
 import functools
-user = {'username' : 'Amardip', 'access_level' : "admin"}
+user = {'username' : 'Amardip', 'access_level' : "guest"}
 
-def make_secure(func):
-    @functools.wraps(func)
-    def secure_function():
-        if user['access_level'] == 'admin':
-            return func()
-        else:
-            return f"No admin permission for user {user['username']}"
-    return secure_function    
 
-@make_secure
+def make_secure(access_level):
+    def decorator(func):
+        @functools.wraps(func)
+        def secure_function():
+            if user['access_level'] == access_level:
+                return func()
+            else:
+                return f"No {access_level} permission for user {user['username']}"    
+        return secure_function    
+    return decorator
+
+@make_secure("admin")
 def get_admin_password():
-    return "1234"
+    return "admin: 1234"
+ 
+@make_secure("guest")
+def get_dashboard_password():
+    return "user: user_password"
 
 print (get_admin_password())
-print (get_admin_password.__name__)
+print (get_dashboard_password())
+
+user = {'username' : 'vicky', 'access_level' : "admin"}
+
+print (get_admin_password())
+print (get_dashboard_password())
