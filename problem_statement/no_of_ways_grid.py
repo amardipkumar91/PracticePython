@@ -28,6 +28,6 @@ def count_of_ways(m , n):
 
 if __name__ == "__main__":
     print ("Enter the no if grid : ")
-    n = input()
+    n = int(input())
     noOfWays = count_of_ways(n, n)
     print ("no of ways", noOfWays)
