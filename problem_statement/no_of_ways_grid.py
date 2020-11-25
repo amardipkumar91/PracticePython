@@ -17,7 +17,7 @@
 #     noOfWays = count_of_ways(n)
 #     print ("no of ways", noOfWays)
 #-------------------------other solution -------------------------------
-
+#grid question solution
 def count_of_ways(m , n):
     if m == 0 and n == 0:
         return 0

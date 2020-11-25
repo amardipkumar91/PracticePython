@@ -1,3 +1,4 @@
+# Find the pairs in a list that sum is given number.
 def findPair(lst, total_sum):
     res = []
     while lst:

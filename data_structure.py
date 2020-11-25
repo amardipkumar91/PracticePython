@@ -176,7 +176,7 @@ obj.deQueue()
 
 #-------------bubble sort ----------
 
-alist = [54,26,93,17,77,31,44,55,20]
+# alist = [54,26,93,17,77,31,44,55,20]
 # def bubbleSort(alist):
 #     for passnum in range(len(alist)-1,0,-1):
 #         for i in range(passnum):

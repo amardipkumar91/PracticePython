@@ -1,26 +1,26 @@
-# class Celsius:
-#     def __init__(self, temperature = 0):
-#         self.temp = temperature
+class Celsius:
+    def __init__(self, temperature = 0):
+        self.temp = temperature
 
-#     def to_fahrenheit(self):
-#         return (self.temp * 1.8) + 32
+    def to_fahrenheit(self):
+        return (self.temp * 1.8) + 32
 
-#     # @property
-#     def get_temp(self):
-#         return self._temp
+    # @property
+    def get_temp(self):
+        return self._temp
     
-#     # @temp.setter
-#     def set_temp(self, value):
-#         if value < -273:
-#             raise ValueError("It should not be less than -273")
-#         self._temp = value
+    # @temp.setter
+    def set_temp(self, value):
+        if value < -273:
+            raise ValueError("It should not be less than -273")
+        self._temp = value
 
-#     temp = property(get_temp,set_temp)
+    temp = property(get_temp,set_temp)
     
-# obj = Celsius()
-# print (obj.temp)
-# obj.temp = 38
-# print (obj.to_fahrenheit())
+obj = Celsius()
+print (obj.temp)
+obj.temp = 38
+print (obj.to_fahrenheit())
 
 
 #----------

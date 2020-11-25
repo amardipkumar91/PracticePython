@@ -45,25 +45,25 @@
 #     print(name_lat(city))
 
 
-# class Test:
-#     cc = 8
-#     def __init__(self,a,b):
-#         self.a = a
-#         self.b = b
+class Test:
+    cc = 8
+    def __init__(self,a,b):
+        self.a = a
+        self.b = b
     
-#     # @staticmethod
-#     # def foo(b):
-#     #     c = Test.cc
-#     #     return c
+    # @staticmethod
+    # def foo(b):
+    #     c = Test.cc
+    #     return c
 
-#     @classmethod
-#     def create_from_list(cls, data):
-#         return cls(data[0], data[1])
+    @classmethod
+    def create_from_list(cls, data):
+        return cls(data[0], data[1])
         
 
-# obj = Test.create_from_list([3,4])
-# # print obj.foo(6)
-# print obj.a
+obj = Test.create_from_list([3,4])
+# print obj.foo(6)
+print obj.a
 
 #-----------------static method----
 # class Test:
@@ -107,27 +107,27 @@
 
 #---------------------
 
-# class A(object):
-#     pass
-#     # def foo(self):
-#     #     return "class A"
+class A(object):
+    pass
+    # def foo(self):
+    #     return "class A"
     
 
-# class B(object):
-#     def foo(self):
-#         return "class B"
+class B(object):
+    def foo(self):
+        return "class B"
 
-# class D(B):
-#     def foo(self):
-#         super(D, self).foo()
-#         return "class C"
+class D(B):
+    def foo(self):
+        super(D, self).foo()
+        return "class C"
 
-# class C(A,D):
-#     pass
+class C(A,D):
+    pass
 
-# obj = C()
-# print (obj.foo())
-# print (C.mro())
+obj = C()
+print (obj.foo())
+print (C.mro())
 
 #-------------------
 
