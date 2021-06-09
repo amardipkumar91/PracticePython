@@ -19,7 +19,7 @@ class ListNode:
         return self._next
     
     def has_next(self):
-        return self._next != None
+             self._next != None
     
 class SinglyLinkList(object):
     def __init__(self, head = None):

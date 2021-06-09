@@ -26,22 +26,22 @@ import pdb;pdb.set_trace()
 
 #---------property---------
 
-# class Test:
-#     def __init__(self):
-#         self.__name = ''
+class Test:
+    def __init__(self):
+        self.__name = ''
     
-#     @property
-#     def name(self):
-#         return self.__name + "hello"
+    @property
+    def name(self):
+        return self.__name + "hello"
     
-#     @name.setter
-#     def name(self, val):
-#         self.__name = val
+    @name.setter
+    def name(self, val):
+        self.__name = val
     
-# obj = Test()
-# obj.name = 'Amardip'
-# import pdb;pdb.set_trace()
-# print (obj.name)
+obj = Test()
+obj.name = 'Amardip'
+import pdb;pdb.set_trace()
+print (obj.name)
 
 
 #---------
