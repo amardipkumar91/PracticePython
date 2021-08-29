@@ -17,7 +17,7 @@ class Test1(Test):
         self.b = 20
 
     def foo(self):
-        return self.dispaly(), self.b
+        return self.dispaly(), self.b   
 
 obj = Test1()
 obj.get_val() 

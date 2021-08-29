@@ -68,9 +68,8 @@ class Queue:
         if len(self.s1) == 0:
             print ("queue is empty")
         x = self.s1[-1]
-        # self.s1 = self.s1[::-1]
         self.s1.pop()
-        # self.s1 = self.s1[::-1]
+       
         return x
 
 obj = Queue()
@@ -92,6 +91,7 @@ obj.deQueue()
 #         if len(self.s1) == 0:
 #             print ("queue is empty")
 #         self.s1 = self.s1[::-1]
+#         import pdb;pdb.set_trace()
 #         x = self.s1[-1]
 #         self.s1.pop()
 #         self.s1 = self.s1[::-1]
@@ -176,30 +176,31 @@ if __name__ == '__main__':
 
 #-------------bubble sort ----------
 
-# alist = [54,26,93,17,77,31,44,55,20]
-# def bubbleSort(alist):
-#     for passnum in range(len(alist)-1,0,-1):
-#         for i in range(passnum):
-#             if alist[i]>alist[i+1]:
-#                 temp = alist[i]
-#                 alist[i] = alist[i+1]
-#                 alist[i+1] = temp
+alist = [54,26,93,17,77,31,44,55,20]
+def bubbleSort(alist):
+    for passnum in range(len(alist)-1,0,-1):
+        for i in range(passnum):
+            if alist[i]>alist[i+1]:
+                temp = alist[i]
+                alist[i] = alist[i+1]
+                alist[i+1] = temp
 
-# bubbleSort(alist)
-# print(alist)
+bubbleSort(alist)
+print(alist)
 
 #-------------selection sort -----------
-# def selection_sort(alist):
-#     for i in range(len(alist)-1 , 0 , -1):
-#         pom = 0
-#         for j in range(1, i +1 ):
-#             if alist[j] > alist[pom]:
-#                 pom = j
-#             tmp = alist[i]
-#             alist[i] = alist[pom]
-#             alist[pom] = tmp
+def selection_sort(alist):
+    for i in range(len(alist)-1 , 0 , -1):
+        pom = 0
+        for j in range(1, i +1 ):
+            if alist[j] < alist[pom]:
+                pom = j
+            tmp = alist[i]
+            alist[i] = alist[pom]
+            alist[pom] = tmp
+    return alist
 
-# selection_sort(alist)
-# print (alist)
+print (selection_sort([3,6,1,5]))
+
 
 

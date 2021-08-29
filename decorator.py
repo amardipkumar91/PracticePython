@@ -30,3 +30,17 @@ user = {'username' : 'vicky', 'access_level' : "admin"}
 
 print (get_admin_password())
 print (get_dashboard_password())
+
+
+def deco(func):
+    print ("1")
+    def inner(*args):
+        print ("2")
+        result = func(*args)
+        return result
+    return inner
+
+@deco
+def add(a,b):
+    return a+ b
+[add(i, i+1) for i in range(10)]

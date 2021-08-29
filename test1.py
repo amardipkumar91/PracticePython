@@ -173,14 +173,22 @@ def clock(func):
 
 #---------------
 from functools import wraps
+def my_decorator1(f):
+    @wraps(f)
+    def inner(*args, **kwds):
+        print ("called decorator function 1")
+        return f(*args, **kwds)
+    return inner
+
 def my_decorator(f):
     @wraps(f)
     def inner(*args, **kwds):
         print ("called decorator function")
         return f(*args, **kwds)
     return inner
-
+    
 @my_decorator
+@my_decorator1
 def foo(n):
     """Docstring"""
     print ("called real function",n)

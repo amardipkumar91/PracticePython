@@ -44,14 +44,13 @@ for i in range(0, len(sample_input)):
     for j in range(i+1, len(sample_input)):
         sub_str = sub_str +  sample_input[j]
         count = count +1
-        print sub_str
+        print (sub_str)
         if sub_str == sub_str[::-1]:
             if len(sub_str) > result:
                 result = len(sub_str)
                 final_substring = sub_str
 print (result, final_substring)
-print ("number of sub string :", count, len(sample_input))
-        
+
 
 
 

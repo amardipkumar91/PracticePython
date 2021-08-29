@@ -1,15 +1,15 @@
 # # check no of frequency of the word and return it in the descresing order.
 
-# import operator
-# sample_input = ["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"]
-# l_dict = {}
-# for i in sample_input:
-#     if i in l_dict:
-#         l_dict[i] += 1
-#     else:
-#         l_dict[i] = 1
-# result = dict(sorted(l_dict.items(), key=operator.itemgetter(1), reverse=True)[0:3])
-# print (result)     
+import operator
+sample_input = ["the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"]
+l_dict = {}
+for i in sample_input:
+    if i in l_dict:
+        l_dict[i] += 1
+    else:
+        l_dict[i] = 1
+result = dict(sorted(l_dict.items(), key=operator.itemgetter(1), reverse=True)[0:3])
+print (result)     
 
 ''' Find Largest time from the number :
     input = [1,2,3,4]

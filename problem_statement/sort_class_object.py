@@ -27,13 +27,13 @@ pbj2 = Student('Amar1', 'M', 10, 'A', 105)
 pbj3 = Student('Amar2', 'M', 10, 'B', 110)
 pbj4 = Student('Amar3', 'M', 10, 'B', 115)
 lst = [pbj, pbj1, pbj2, pbj3, pbj4]
-print lst
+print (lst)
 for i in lst:
-    print i.marks
+    print (i.marks)
 def sort_marks(student):
     return student.marks
 
 sorted_student_marks = sorted(lst, key = sort_marks)
 for i in sorted_student_marks:
-    print i.marks
+    print (i.marks)
     

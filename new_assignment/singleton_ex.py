@@ -1,24 +1,23 @@
-# class Singleton(type):
-#     _instances = {}
-#     def __call__(cls, *args, **kwargs):
-#         if cls not in cls._instances:
-#             cls._instances[cls] = super(Singleton, cls).__call__(*args, **kwargs)
-#         return cls._instances[cls]
+class Singleton(type):
+    _instances = {}
+    def __call__(cls, *args, **kwargs):
+        if cls not in cls._instances:
+            cls._instances[cls] = super().__call__(*args, **kwargs)
+        return cls._instances[cls]
 
-# class Test(object):
-#     __metaclass__ = Singleton
+class Test(metaclass=Singleton):
 
-#     def __init__(self, a, b):
-#         self.a = a
-#         self.b = b
-#     def foo(self):
-#         print (self.a, self.b)
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
+    def foo(self):
+        print (self.a, self.b)
     
-# obj = Test(5,6)
-# print (id(obj))
-# obj1 = Test(10,12)
-# print (id(obj1))
-# import pdb;pdb.set_trace()
+obj = Test(5,6)
+print (id(obj))
+obj1 = Test(10,12)
+print (id(obj1))
+import pdb;pdb.set_trace()
 
 
 def singleton(class_):

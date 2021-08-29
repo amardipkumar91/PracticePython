@@ -16,7 +16,7 @@ def move_string_begin(user_string):
     user_string = "".join(datalist) 
     return user_string
 user_string = "My Name is Amardip Kumar"
-print user_string, "\n",move_string_begin(user_string)
+print (user_string), "\n",move_string_begin(user_string)
 
 #2 Solution 2
 def move_string_begin_2(user_string):
@@ -27,7 +27,7 @@ def move_string_begin_2(user_string):
     result = result + "".join(nospace_char)
     return result
 user_string = "My Name is Amardip Kumar"
-print user_string, "\n",move_string_begin_2(user_string)
+print (user_string), "\n",move_string_begin_2(user_string)
 
 # move all zero to last of list but remain all the items order should be same
 
@@ -41,7 +41,7 @@ def move_zero_to_end(lst):
     lst = non_zero_element +[0] * total_zero
     return lst
 lst = [1,2,3,0,0,7,9,0,3,4,0]
-print lst, "\n",move_zero_to_end(lst)
+print (lst), "\n",move_zero_to_end(lst)
 
 def move_zero_to_end_2(lst):
     i = len(lst) - 1
@@ -54,7 +54,7 @@ def move_zero_to_end_2(lst):
             i -=1
     return lst
 lst = [1,2,3,0,0,7,9,0,3,4,0]
-print lst, "\n",move_zero_to_end_2(lst)
+print (lst), "\n",move_zero_to_end_2(lst)
 
 
 # solution 2
@@ -71,7 +71,7 @@ def move_zero_to_begin(lst):
             i +=1
     return lst
 lst = [1,2,3,0,0,7,9,0,3,4,0]
-print lst, "\n",move_zero_to_begin(lst)
+print (lst), "\n",move_zero_to_begin(lst)
 
 
 
