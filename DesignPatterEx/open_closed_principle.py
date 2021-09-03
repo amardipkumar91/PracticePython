@@ -37,6 +37,9 @@ class Specification:
     def is_satisfied(self, item):
         pass
 
+    def __and__(self, other):
+        return AndSpecification(self, other)
+
 class Filter:
     def filter(self, items, spec):
         pass
@@ -93,7 +96,8 @@ if __name__ == '__main__':
         print (f" - {p.name} is large")
     
     print ("Large Blue items")
-    large_blue = AndSpecification(large, ColorSpectification(Color.BLUE))
+    #large_blue = AndSpecification(large, ColorSpectification(Color.BLUE))
+    large_blue = large & ColorSpectification(Color.BLUE)
     for p in bf.filter(product, large_blue):
         print (f" - {p.name} is large and blue")
 
