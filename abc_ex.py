@@ -10,7 +10,6 @@ class Tambola(abc.ABC):
     def pick(self):
         pass
 
-
     def loaded(self):
         return 
 
